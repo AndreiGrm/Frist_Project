@@ -1,4 +1,9 @@
 <?php
+if(isset($_COOKIE[session_name()])){
+    setcookie( session_name(),'', time()-86400, '/');
+}
+session_unset();
+session_destroy();
 include ('api/api.login.php')
 ?>
 <!DOCTYPE html>
@@ -23,7 +28,6 @@ include ('api/api.login.php')
         </form><br>
         <label for="">Se non hai un account<br><button><a href="./register.php">Registrati</a></button></label>
     </div>
-    
 </body>
 </html>
 

@@ -1,0 +1,11 @@
+:root{
+    --primary:#7d6b9d;
+    --secondary:rgb(57, 24, 77);
+}
+#container{
+    background-color:var(--primary);
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    height: 100%;
+}

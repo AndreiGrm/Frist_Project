@@ -1,0 +1,35 @@
+:root{
+    --primary:#7d6b9d;
+    --secondary:rgb(57, 24, 77);
+}
+#ciao{
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary);
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    left: 0%;
+    color: white;
+    text-align: center;
+    box-shadow: -2px 0px 15px 12px rgba(0,0,0,0.7);
+}
+img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h3{
+    margin-top: 20px;
+    padding: 10px;
+}
+h3:hover{
+    background-color: var(--primary);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: white;
+}

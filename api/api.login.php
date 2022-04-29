@@ -1,5 +1,6 @@
 <?php 
     include ('db/db.php');
+    
     if(isset($_POST['login'])){
         function validateFromData ($formData){
             $formData = trim(stripslashes(htmlspecialchars($formData)));
@@ -7,13 +8,15 @@
         }
         $formUser     = validateFromData ($_POST['username']);
         $formPassword = validateFromData ($_POST['password']);
-        $query        = "SELECT nome,pw FROM utenti WHERE nome='$formUser' ";
+        $query        = "SELECT nome,email,password FROM users WHERE nome='$formUser' ";
         $results      = mysqli_query($conn, $query);
         if(mysqli_num_rows($results)> 0){
             while($row = mysqli_fetch_assoc($results)){
                 $user       =   $row ['nome'];
-                $hashedPass =   $row ['pw'];
-                if(password_verify($formPassword, $hashedPass)){
+                
+                $hashedPass =   $row ['password'];
+                
+                if(password_verify($formPassword, $hashedPass) ){
                     session_start();
                     $_SESSION['loggedInUser']=$user;
                     header("Location:index.php");
