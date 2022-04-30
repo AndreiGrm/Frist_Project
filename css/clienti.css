@@ -1,0 +1,28 @@
+:root{
+    --primary:#7d6b9d;
+    --secondary:rgb(57, 24, 77);
+}
+#container{
+    background-color:var(--primary);
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    height: 100%;
+    
+}
+#form{
+    background-color: var(--secondary);
+    text-align: center;
+    width: 30%;
+    height: 40%;
+    color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    left: 40%;
+    top: 10%;
+}
+#from input{
+    width: 10%;
+    margin-top: 6px;
+}

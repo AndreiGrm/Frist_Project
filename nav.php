@@ -10,8 +10,8 @@
 <body>
     <div id="ciao">
         <img src="./img/logog.png" alt="#">
-        <h3><a href="">Clienti</a></h3>
-        <h3><a href="">Profilo</a></h3>
+        <h3><a href="./clienti.php">Clienti</a></h3>
+        <h3><a href="#">Profilo</a></h3>
         <h3><a href="./login.php">LogOut</a></h3>
     </div>
 </body>
