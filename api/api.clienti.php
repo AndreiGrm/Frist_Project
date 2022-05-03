@@ -1,5 +1,9 @@
 <?php
 include ('db/db.php');
+$query = "SELECT * FROM clienti";
+ $results = mysqli_query($conn, $query);
+ $clienti  = mysqli_fetch_all($results, MYSQLI_ASSOC);
+ mysqli_free_result($results);
 if(isset($_POST['salva'])){
     $azienda = $_POST['azienda'];
     $telefono = $_POST['telefono'];
@@ -14,9 +18,12 @@ if(isset($_POST['salva'])){
     $email=validateFormData($email);
     $iban=validateFormData($iban);
     if($azienda && $telefono && $email && $iban){
+        echo $azienda.$telefono.$email.$iban;
         $query= "INSERT INTO clienti (id, azienda, telefono, email, iban) VALUES (NULL, '$azienda', '$telefono', '$email', '$iban') ";
+        $azienda=$telefono=$email=$iban = "";
+        echo $azienda.$telefono.$email.$iban;
+        
         if (mysqli_query($conn, $query)){
-            $azienda=$telefono=$email=$iban = "";
         }else{
             echo"";
         }

@@ -2,10 +2,7 @@
  
  include ('./api/api.clienti.php');
  
- $query = "SELECT * FROM clienti";
- $results = mysqli_query($conn, $query);
- $clienti  = mysqli_fetch_all($results, MYSQLI_ASSOC);
- mysqli_free_result($results);
+ 
  
 
     
@@ -29,7 +26,7 @@
             <h1>welcome <?php echo $_SESSION['loggedInUser'] ?></h1>
             <h2>cliente richiesto</h2>
             <button onclick="nuovo()">+ Crea nuovo cliente</button>
-            <button name="refresh" onclick="anulla()">Refresh</button>
+            <button name="refresh">Refresh</button>
         </div>
         <div id="form" style="display:none;">
             <form action="" method="post" >
@@ -61,6 +58,7 @@
                         <td><?php echo htmlspecialchars($cliente['telefono']);?></td>
                         <td><?php echo htmlspecialchars($cliente['email']);?></td>
                         <td><?php echo htmlspecialchars($cliente['iban']);?></td>
+                        <td><a href="cliente.php?id=<?php echo htmlspecialchars($cliente['id']); ?>">info</a><button>Elimina</button></td>
                     </th>
                 </tr>
                 <?php } ?>
